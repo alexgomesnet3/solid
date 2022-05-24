@@ -12,10 +12,10 @@ echo "Valor Total: ".$carrinho1->exibirValorTotal();
 echo "</br>";
 
 
-/*$carrinho1->adicionarItens('Bicicleta', 750.10);
+$carrinho1->adicionarItens('Bicicleta', 750.10);
 $carrinho1->adicionarItens('Geladeira', 1250.70);
 $carrinho1->adicionarItens('Tapete', 79.99);
-$carrinho1->adicionarItens('Video-Game', 3550.00);*/
+$carrinho1->adicionarItens('Video-Game', 3550.00);
 
 echo "</br>";
 print_r($carrinho1->exibirItens());
