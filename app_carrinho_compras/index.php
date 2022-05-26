@@ -6,6 +6,7 @@ use App\CarrinhoCompra;
 
 $carrinho1 = new CarrinhoCompra();
 
+echo "<h3>Agora com SRP</h3>";
 print_r($carrinho1->exibirItens());
 echo "</br>";
 echo "Valor Total: ".$carrinho1->exibirValorTotal();
