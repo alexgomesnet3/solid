@@ -1,6 +1,6 @@
 <?php
 
-namespace Item;
+namespace App;
 
 class Item {
     public function teste() {

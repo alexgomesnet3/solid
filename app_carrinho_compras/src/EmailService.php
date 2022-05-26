@@ -1,6 +1,6 @@
 <?php
 
-namespace EmailService;
+namespace App;
 
 class EmailService {
     public function teste() {

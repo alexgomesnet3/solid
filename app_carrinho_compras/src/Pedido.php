@@ -1,6 +1,6 @@
 <?php
 
-namespace Pedido;
+namespace App;
 
 class Pedido {
     public function teste() {
