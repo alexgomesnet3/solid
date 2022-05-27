@@ -20,7 +20,7 @@ class CarrinhoCompra {
         return $this->itens;
     }    
 
-    public function adicionarItens(Item $item)
+    public function adicionarItens(Item $item = null)
     {
         array_push($this->itens, $item);
         return true;

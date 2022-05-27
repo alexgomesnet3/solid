@@ -15,11 +15,11 @@ class Item {
     }
 
     public function getDescricao() {
-        return $this->descricao = '';
+        return $this->descricao;
     }
 
     public function getValor() {
-        return $this->valor = '';
+        return $this->valor;
     }
 
     public function setDescricao(string $descricao) {

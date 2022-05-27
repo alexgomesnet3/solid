@@ -3,40 +3,62 @@
 require __DIR__."/vendor/autoload.php";
 
 use App\CarrinhoCompra;
+use App\Item;
+use App\Pedido;
+use App\EmailService;
 
-$carrinho1 = new CarrinhoCompra();
 
 echo "<h3>Agora com SRP</h3>";
-/*
-print_r($carrinho1->exibirItens());
-echo "</br>";
-echo "Valor Total: ".$carrinho1->exibirValorTotal();
-echo "</br>";
-*/
 
-/*
-$carrinho1->adicionarItens('Bicicleta', 750.10);
-$carrinho1->adicionarItens('Geladeira', 1250.70);
-$carrinho1->adicionarItens('Tapete', 79.99);
-$carrinho1->adicionarItens('Video-Game', 3550.00);
-*/
-/*
-echo "</br>";
-print_r($carrinho1->exibirItens());
-echo "</br>";
-echo "Valor Total Recalculado: ".$carrinho1->exibirValorTotal();
+$pedido = new Pedido();
+//------------------//------------------//
+$item01 = new Item();
+$item02 = new Item();
 
-echo "</br>";
-echo "Status: ".$carrinho1->exibirStatus();
-*/
-/*
-echo "</br>";
-if($carrinho1->confirmarPedido()) {
-    echo 'Pedido realizado com sucesso!';
-} else {
-    echo 'Erro na confirmacao do pedido. Carrinho nao possui itens.';
+$item01->setDescricao('Bicicleta');
+$item01->setValor(755.11);
+
+$item02->setDescricao('Geladeira');
+$item02->setValor(1250.74);
+//------------------//------------------//
+//------------------//------------------//
+echo "<h4>Pedido Iniciado</h4>";
+echo "<pre>";
+print_r($pedido);
+echo "</pre>";
+//------------------//------------------//
+//------------------//------------------//
+$pedido->getCarrinhoCompra()->adicionarItens($item01);
+$pedido->getCarrinhoCompra()->adicionarItens($item02);
+//------------------//------------------//
+echo "<h4>Pedido com Itens</h4>";
+echo "<pre>";
+print_r($pedido);
+echo "</pre>";
+//------------------//------------------//
+echo "<h4>Itens do Pedido</h4>";
+echo "<pre>";
+print_r($pedido->getCarrinhoCompra()->getItens());
+echo "</pre>";
+//------------------//------------------//
+echo "<h4>Valor do Pedido</h4>";
+$total = 0;
+foreach($pedido->getCarrinhoCompra()->getItens() as $key => $item) {
+    $total += $item->getValor();
 }
-
-echo "</br>";
-echo "Status: ".$carrinho1->exibirStatus();
-*/
+echo $total;
+//------------------//------------------//
+echo "<h4>Validacao o Carrinho de Compras</h4>";
+if($pedido->getCarrinhoCompra()->validarCarrinho() === true) {
+    echo "Carrinho de Compras Valido!";
+} else {
+    echo "Carrinho de Compras Vazio!";
+}
+//------------------//------------------//
+//------------------//------------------//
+echo "<h4>E-mail</h4>";
+if($pedido->getStatus() == 'confirmado') {
+    echo $pedido->getStatus();
+    echo EmailService::dispararEmail();
+}
+echo $pedido->getStatus();
