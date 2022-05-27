@@ -18,7 +18,28 @@ class Pedido {
         $this->valorPedido = 0;
     }
 
-    public function teste() {
+    public function getStatus() {
+        return $this->status;
+    }
 
+    public function getCarrinhoCompra() {
+        return $this->carrinhoCompra;
+    }
+
+    public function getValorPedido() {
+        return $this->valorPedido;
+    }
+
+    public function setStatus(string $status) {
+        $this->status = $status;
+    }
+
+    public function confirmar() {
+        if($this->carrinhoCompra->validarCarrinho()) {
+            $this->setStatus = 'confirmado';
+            return true;
+        }
+
+        return false;
     }
 }
