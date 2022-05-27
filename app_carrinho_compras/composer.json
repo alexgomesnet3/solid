@@ -13,5 +13,7 @@
             "email": "alex.gomes.net3@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    }
 }
