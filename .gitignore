@@ -18,6 +18,7 @@
 !/logs/empty
 
 /app_carrinho_compras/vendor/*
+/app_etl/vendor/*
 
 # CakePHP 2
 
@@ -27,3 +28,4 @@
 /vendors/*
 
 /app_carrinho_compras/vendors/*
+/app_etl/vendors/*

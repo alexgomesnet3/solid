@@ -1,0 +1,16 @@
+{
+    "name": "alexgomes/app_etl",
+    "description": "Open - Closed Principle - ETL Example",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alex",
+            "email": "alex.gomes.net3@gmail.com"
+        }
+    ],
+    "require": {}
+}
