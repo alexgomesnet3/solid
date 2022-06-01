@@ -13,22 +13,42 @@ class ItemTest extends TestCase {
         $this->assertEquals(0, $item->getValor());
     }
 
-    public function testGetSetDescricao() {
+    /**
+     * @dataProvider dataDescricao
+     */
+    public function testGetSetDescricao($descricao) {
         $item = new Item();
-
-        $descricao = 'Jogo de Xicaras';
 
         $item->setDescricao($descricao);
         $this->assertEquals($descricao, $item->getDescricao());
     }
 
-    public function testGetSetValor() {
-        $item = new Item();
+    // Abaixo segue o Data Provider com as descrições
+    public function dataDescricao() {
+        return [
+            ['Jogo de Xicaras'],
+            ["Aspas Duplas"],
+            ['']
+        ];
+    }
 
-        $valor = 12.59;
+    /**
+     * @dataProvider dataValores
+     */
+    public function testGetSetValor($valor) {
+        $item = new Item();
 
         $item->setValor($valor);
         $this->assertEquals($valor, $item->getValor());
+    }
+
+    // Abaixo segue o Data Provider com os valores
+    public function dataValores() {
+        return [
+            [100],
+            [-2],
+            [0]
+        ];
     }
 
     public function testItemInvalido() {
@@ -53,6 +73,5 @@ class ItemTest extends TestCase {
         $item->setValor(0);
         $item->setDescricao('');
         $this->assertEquals(false, $item->itemValido());
-
     }
 }
