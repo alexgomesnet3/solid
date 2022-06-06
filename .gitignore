@@ -19,6 +19,7 @@
 
 /app_carrinho_compras/vendor/*
 /app_etl/vendor/*
+/app_carrinho_compras/composer.lock
 
 # CakePHP 2
 
@@ -29,3 +30,4 @@
 
 /app_carrinho_compras/vendors/*
 /app_etl/vendors/*
+/app_etl/composer.lock
