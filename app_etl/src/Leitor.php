@@ -2,7 +2,7 @@
 
 namespace src;
 
-use src\Arquivo;
+use src\extrator\Arquivo;
 
 class Leitor {
 
@@ -27,10 +27,13 @@ class Leitor {
 
     public function lerArquivo(): array {
         $caminho = $this->getDiretorio().'/'.$this->getArquivo();
+        $extensao = explode('.', $this->getArquivo());
 
-        $arquivo = new Arquivo();
-        $arquivo->lerArquivoCSV($caminho);
+        $classe = '\src\extrator\\' . ucfirst($extensao[1]); // txt ou csv - Fazendo com que o primeiro caractere da extensao fique maiusculo
 
-        return $arquivo->getDados();
+        return call_user_func_array(
+            [new $classe, 'lerArquivo'],
+            [$caminho]
+        );
     }
 }
