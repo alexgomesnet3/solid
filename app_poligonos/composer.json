@@ -1,0 +1,15 @@
+{
+    "name": "alexgomes/app_poligonos",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alex",
+            "email": "alex.gomes.net3@gmail.com"
+        }
+    ],
+    "require": {}
+}
