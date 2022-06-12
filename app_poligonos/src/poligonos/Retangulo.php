@@ -1,6 +1,6 @@
 <?php
 
-namespace src;
+namespace src\poligonos;
 
 class Retangulo {
     protected $largura;
