@@ -14,6 +14,6 @@ class Poligono {
     }
 
     public function getArea(): float {
-        //return $this->getAltura() * $this->getLargura();
+        return $this->getForma()->getAltura() * $this->getForma()->getLargura();
     }
 }
