@@ -20,10 +20,12 @@
 /app_carrinho_compras/vendor/*
 /app_etl/vendor/*
 /app_poligonos/vendor/*
+/app_crm/vendor/*
 
 /app_carrinho_compras/composer.lock
 /app_etl/composer.lock
 /app_poligonos/composer.lock
+/app_crm/composer.lock
 
 .DS_Store
 /*/.DS_Store
