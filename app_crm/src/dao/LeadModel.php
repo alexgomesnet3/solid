@@ -4,16 +4,14 @@ namespace src\dao;
 
 use src\DB;
 use src\interfaces\ICadastro;
+use src\interfaces\INotificacao;
+
 use src\componentes\Log;
 use src\componentes\Notificacao;
 
-class LeadModel extends DB implements ICadastro {
+class LeadModel extends DB implements ICadastro, INotificacao {
     public function salvar() {
         // logica de salvar
-    }
-
-    public function registrarLog(Log $log) {
-        // logica de registrarLog
     }
 
     public function enviarNotificacao(Notificacao $notificacao) {
