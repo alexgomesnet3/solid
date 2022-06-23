@@ -2,6 +2,8 @@
 
 namespace src\dao;
 
-class LeadModel {
+use src\DB;
+
+class LeadModel extends DB {
 
 }

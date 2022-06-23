@@ -2,6 +2,8 @@
 
 namespace src\dao;
 
-class UsuarioModel {
+use src\DB;
+
+class UsuarioModel extends DB {
 
 }

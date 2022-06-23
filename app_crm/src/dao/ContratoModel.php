@@ -2,6 +2,8 @@
 
 namespace src\dao;
 
-class ContratoModel {
+use src\DB;
+
+class ContratoModel extends DB {
 
 }

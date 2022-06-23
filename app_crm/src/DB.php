@@ -6,6 +6,6 @@ class DB {
     private $conexao;
 
     protected function conectar() {
-        // metodo conexao
+        // logica de conexao
     }
 }
